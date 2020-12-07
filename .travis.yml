@@ -14,8 +14,6 @@ before_script:
 script:
 - docker run -v ${TRAVIS_BUILD_DIR}/jPlatformSocle:/root/source --name buildimage -t julienbayle/jplatformbuild
 - docker cp buildimage:/root/dist .
-- export CODE_VERSION=`git describe`
-- sonar-scanner -Dsonar.projectVersion=$CODE_VERSION
 
 deploy:
   provider: releases
